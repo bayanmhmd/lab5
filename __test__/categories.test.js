@@ -3,7 +3,7 @@ const Categories = require('../models/categories-model.js');
 const categories = new Categories();
 
 describe('Category Model' , ()=> {
-  it('can create() new data', () => {
+  it(' create() new data', () => {
     let object = {name : 'bayan'};
     return categories.create(object)
       .then( data => {
@@ -15,7 +15,7 @@ describe('Category Model' , ()=> {
   });
 
 
-  it('can read() from DB', () => {
+  it(' read() from DB', () => {
     let object = {name : 'bayan'};
     return categories.create(object)
       .then( data => {
@@ -28,7 +28,7 @@ describe('Category Model' , ()=> {
   });
 
 
-  it('can update() data in the DB', () => {
+  it('update() data in the DB', () => {
     let object = {name : 'bayan'};
     let newObject = {name : 'lenna'};
 
@@ -42,7 +42,7 @@ describe('Category Model' , ()=> {
       });
   });
 
-  it('can Delete() data in the DB', () => {
+  it(' Delete() data in the DB', () => {
     let object = {name : 'bayan'};
     return categories.create(object)
       .then( data => {

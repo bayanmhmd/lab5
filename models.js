@@ -2,11 +2,11 @@
 /* eslint-disable no-undef */
 'use strict';
 
-  class ModelControl {
-    constructor(schema) {
-      this.schema = schema;
+class ModelControl {
+  constructor(schema) {
+    this.schema = schema;
       
-    }
+  }
   
   
     
@@ -32,4 +32,4 @@
   }
 
 }
-  module.exports = ModelControl;
+module.exports = ModelControl;

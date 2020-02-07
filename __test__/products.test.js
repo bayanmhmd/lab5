@@ -4,7 +4,7 @@ const Products = require('../models/products-model');
 const newProduct = new Products();
 
 describe('Category Model' , ()=> {
-  it('can create() new data', () => {
+  it('create() new data', () => {
     let object = {name : 'sony' , price : 550 , weight: 25 , quantity_in_stock: 95};
     return newProduct.create(object)
       .then( data => {        
@@ -15,7 +15,7 @@ describe('Category Model' , ()=> {
   });
 
 
-  it('can read() from DB', () => {
+  it('read() from DB', () => {
     let object = {name : 'sony' , price : 550 , weight: 25 , quantity_in_stock: 95};
     return newProduct.create(object)
       .then( data => {
@@ -28,7 +28,7 @@ describe('Category Model' , ()=> {
   });
 
 
-  it('can update() data in the DB', () => {
+  it(' update() data in the DB', () => {
     let object = {name : 'sony' , price : 550 , weight: 25 , quantity_in_stock: 95};
     let newObject = {name : 'apple' , price : 700 , weight: 20 , quantity_in_stock: 100};
 
@@ -42,7 +42,7 @@ describe('Category Model' , ()=> {
       });
   });
 
-  it('can Delete() data in the DB', () => {
+  it(' Delete() data in the DB', () => {
     let object = {name : 'sony' , price : 550 , weight: 25, quantity_in_stock: 95};
     return newProduct.create(object)
       .then( data => {
