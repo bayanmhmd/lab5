@@ -1,11 +1,11 @@
 require('@code-fellows/supergoose') ;
-const Categories = require('../models/categories-model');
-const newCat = new Categories();
+const Categories = require('../models/categories-model.js');
+const categories = new Categories();
 
 describe('Category Model' , ()=> {
   it('can create() new data', () => {
     let object = {name : 'bayan'};
-    return newCat.create(object)
+    return categories.create(object)
       .then( data => {
         
         Object.keys(object).forEach(key => {
@@ -17,10 +17,10 @@ describe('Category Model' , ()=> {
 
   it('can read() from DB', () => {
     let object = {name : 'bayan'};
-    return newCat.create(object)
+    return categories.create(object)
       .then( data => {
         
-        return newCat.read(data._id)
+        return categories.read(data._id)
           .then(data => {
             expect(object.name).toEqual(data.name);
           });
@@ -32,10 +32,10 @@ describe('Category Model' , ()=> {
     let object = {name : 'bayan'};
     let newObject = {name : 'lenna'};
 
-    return newCat.create(object)
+    return categories.create(object)
       .then( data => {
         
-        return newCat.update(data._id , newObject)
+        return categories.update(data._id , newObject)
           .then(data => {
             expect(newObject.name).toEqual(data.name);
           });
@@ -44,11 +44,11 @@ describe('Category Model' , ()=> {
 
   it('can Delete() data in the DB', () => {
     let object = {name : 'bayan'};
-    return newCat.create(object)
+    return categories.create(object)
       .then( data => {
-        return newCat.delete(data._id)
+        return categories.delete(data._id)
           .then(() => {
-            return newCat.read(data._id)
+            return categories.read(data._id)
               .then(data => {
                 // console.log(data);
                 expect(data).toEqual(null);

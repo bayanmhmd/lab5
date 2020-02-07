@@ -1,6 +1,4 @@
 'use strict';
-
-
 require('@code-fellows/supergoose') ;
 const Products = require('../models/products-model');
 const newProduct = new Products();
